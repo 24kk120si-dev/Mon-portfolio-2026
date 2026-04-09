@@ -163,15 +163,16 @@ section h2::after{
     background-color: white;
     box-shadow: 0.5px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
-    overflow: hidden;f
+    overflow: hidden;
 }
 .competences table th, .competences table td{
     padding: 15px;
 }
 
-.competences thead{
+.competences table thead{
     background-color: var(--violet-doux);
-    color: white;
+    color: #FFF;
+    text-transform: uppercase;
 }
 .competences table tbody td{
     border-bottom: 1px solid var(--gris-clair);
