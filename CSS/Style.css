@@ -210,3 +210,44 @@ footer a:hover{
     color: var(--orange-vif);
     transform: translateY(-3px);
 }
+/* --- SYSTEME D'ANIMATION GLOBAL --- */
+
+/* 1. Animation de montée (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Animation de descente (Fade In Down) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classes à appliquer dans le HTML */
+.animated-fadeInUp {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animated-fadeInDown {
+    animation: fadeInDown 0.8s ease forwards;
+}
+
+/* Délais pour l'effet de cascade */
+.delay-1s { animation-delay: 0.1s; }
+.delay-2s { animation-delay: 0.2s; }
+.delay-3s { animation-delay: 0.3s; }
+.delay-4s { animation-delay: 0.4s; }
+.delay-5s { animation-delay: 0.5s; }

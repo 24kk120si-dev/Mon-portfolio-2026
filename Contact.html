@@ -26,41 +26,72 @@
             </ul>
         </nav>
     </header>
-    <main class="contact-container">
-        <section class="contact-info">
-            <h1>Contactez-moi</h1>
-            <p>Je suis basé à <strong>Lubumbashi</strong>. N'hésitez pas à me joindre pour toute collaboration ou opportunité.</p>
-            
-            <div class="contact-methods">
-                <p><i class="fa-solid fa-phone"></i> +243 970 882 548</p>
-                <div class="social-apps">
-                    <a href="https://wa.me/243970882548" target="_blank" class="whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="https://t.me/+243970882548" target="_blank" class="telegram">
-                        <i class="fa-brands fa-telegram"></i> Telegram
-                    </a>
-                </div>
-            </div>
+ <main class="contact-page">
+        <section class="contact-hero animated-fadeInDown">
+            <h1>Parlons de votre projet</h1>
+            <p>Disponible pour des stages ou des collaborations innovantes.</p>
         </section>
 
-        <section class="contact-form">
-            <form action="#">
-                <div class="form-group">
-                    <label for="name">Nom complet</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        <div class="contact-wrapper">
+            <aside class="contact-sidebar">
+                <div class="info-card">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>azaria.kabongo@exemple.com</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Téléphone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+243..." required>
+                <div class="info-card">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+243 970 882 548</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Votre message..."></textarea>
+                <div class="info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h3>Localisation</h3>
+                        <p>Lubumbashi, Haut-Katanga, RDC</p>
+                    </div>
                 </div>
-                <button type="submit" class="btn-submit">Envoyer</button>
-            </form>
-        </section>
+
+                <div class="social-connect">
+                    <h4>Retrouvez-moi sur</h4>
+                    <div class="social-pills">
+                        <a href="https://wa.me/243970882548" class="pill whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://t.me/+243970882548" class="pill telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="form-container">
+                <form action="#" class="modern-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Votre Nom</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Votre Email</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder=" ">
+                        <label for="subject">Objet du message</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Comment puis-je vous aider ?</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Envoyer le message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </section>
+        </div>
     </main>
     <footer>
         <p>&copy; 2026 AZ. Tous droits réservés.</p>

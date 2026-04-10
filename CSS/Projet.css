@@ -1,21 +1,22 @@
 :root {
-    --violet-principal: #6c63ff; /* Couleur violette de l'image */
+    --violet-doux: #6c63ff;
     --violet-foncé: #534edd;
+    --orange-vif: #ffa726;
     --gris-tres-fonce: #333;
     --gris-fonce: #666;
+    --gris-tres-clair: #f8f8f8;
     --gris-clair: #eee;
-    --bg-section: #f8f8f8;
 }
 
 .projets {
     padding: 80px 20px;
-    background-color: var(--bg-section);
+    background-color: var(--gris-tres-clair);
     text-align: center;
 }
 
 .projets h2 {
     font-size: 2.5rem;
-    color: var(--violet-principal);
+    color: var(--violet-doux);
     margin-bottom: 50px;
     position: relative;
     display: inline-block;
@@ -27,7 +28,7 @@
     display: block;
     width: 50px;
     height: 4px;
-    background-color: var(--violet-principal);
+    background-color: var(--violet-doux);
     margin: 10px auto 0;
     border-radius: 2px;
 }
@@ -62,12 +63,12 @@
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-bottom: 3px solid var(--violet-principal);
+    border-bottom: 3px solid var(--violet-doux);
 }
 
 .project-card h3 {
     padding: 20px 20px 5px;
-    color: var(--violet-principal);
+    color: var(--violet-doux);
     font-size: 1.3rem;
 }
 
@@ -90,7 +91,7 @@
 .tech button {
     border: none;
     background: #f0efff;
-    color: var(--violet-principal);
+    color: var(--violet-doux);
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -116,7 +117,7 @@
 }
 
 .links a:hover {
-    color: var(--violet-principal);
+    color: var(--orange-vif);
 }
 
 /* Responsive pour tablettes et mobiles */
@@ -128,3 +129,44 @@
     .Project { grid-template-columns: 1fr; }
     .projets h2 { font-size: 2rem; }
 }
+/* --- SYSTEME D'ANIMATION GLOBAL --- */
+
+/* 1. Animation de montée (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Animation de descente (Fade In Down) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classes à appliquer dans le HTML */
+.animated-fadeInUp {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animated-fadeInDown {
+    animation: fadeInDown 0.8s ease forwards;
+}
+
+/* Délais pour l'effet de cascade */
+.delay-1s { animation-delay: 0.1s; }
+.delay-2s { animation-delay: 0.2s; }
+.delay-3s { animation-delay: 0.3s; }
+.delay-4s { animation-delay: 0.4s; }
+.delay-5s { animation-delay: 0.5s; }

@@ -1,0 +1,218 @@
+/* --- CSS SPÉCIFIQUE À LA PAGE PASSIONS --- */
+
+/* Reset & Utilitaires locaux */
+.passions-main {
+    background-color: #fcfcff; /* Fond gris très clair pour faire ressortir les cartes blanches */
+    padding-bottom: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- Section Hero Mini --- */
+.passions-hero {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.passions-hero h1 {
+    font-size: 3.5rem;
+    color: var(--violet-doux);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.passions-hero .separator {
+    width: 80px;
+    height: 6px;
+    background-color: var(--violet-doux);
+    margin: 0 auto 25px;
+    border-radius: 10px;
+}
+
+.passions-hero .subtitle {
+    font-size: 1.25rem;
+    color: var(--gris-fonce);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Grille des Passions --- */
+.passions-grid-section {
+    padding: 40px 0;
+}
+
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* Style des Cartes (Premium) */
+.passion-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden; /* Pour que l'image respecte les bords arrondis */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+    /* Animation de transition fluide */
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(108, 99, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    /* Cache les éléments pour l'animation d'entrée */
+    opacity: 0; 
+}
+
+/* --- Animation au Survol de la Carte (Hover) --- */
+.passion-card:hover {
+    transform: translateY(-15px) scale(1.02); /* Monte et grossit légèrement */
+    box-shadow: 0 30px 60px rgba(108, 99, 255, 0.15); /* Ombre plus forte et violette */
+}
+
+/* Zone Image de la Carte */
+.card-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit la zone sans déformer */
+    /* Animation de transition pour le zoom de l'image */
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --- Animation de Zoom de l'Image au Survol --- */
+.passion-card:hover .card-image img {
+    transform: scale(1.15); /* Zoom plus prononcé de l'image seule */
+}
+
+/* Icône Overlay sur l'image */
+.icon-overlay {
+    position: absolute;
+    bottom: -25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--violet-doux);
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+    border: 3px solid white;
+    z-index: 2;
+    /* Transition pour l'icône */
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+/* --- Animation de l'Icône au Survol --- */
+.passion-card:hover .icon-overlay {
+    transform: rotate(10deg) scale(1.1); /* Tourne et grossit légèrement */
+    background-color: var(--violet-foncé);
+}
+
+/* Zone Contenu de la Carte */
+.card-content {
+    padding: 40px 25px 25px;
+    flex-grow: 1; /* Pousse le contenu vers le haut */
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: var(--violet-foncé);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card-content p {
+    color: var(--gris-fonce);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* --- Section Conclusion --- */
+.passions-conclusion {
+    padding: 60px 0;
+}
+
+.conclusion-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 6px solid var(--violet-doux);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* Cache pour l'animation d'entrée */
+    opacity: 0;
+}
+
+.conclusion-icon {
+    font-size: 3rem;
+    color: var(--violet-doux);
+    flex-shrink: 0;
+}
+
+.conclusion-box p {
+    color: var(--gris-fonce);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* --- ANIMATIONS CSS (ENTRÉE DE PAGE) --- */
+
+/* 1. Animation de montée et apparition (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both; /* Conserve l'état final */
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 2. Animation de pulsation douce (Pulse) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animated-pulse {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; /* Tourne en boucle */
+}
+
+/* Délais d'animation (Delay) pour un effet de cascade */
+.delay-1s { animation-delay: 0.2s; }
+.delay-2s { animation-delay: 0.4s; }
+.delay-3s { animation-delay: 0.6s; }
+.delay-4s { animation-delay: 0.8s; }
+.delay-5s { animation-delay: 1s; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .passions-hero h1 { font-size: 2.8rem; }
+    .conclusion-box { flex-direction: column; text-align: center; }
+}
